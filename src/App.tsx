@@ -1,15 +1,15 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import { Header } from './components/Header'
-import { Dashboard } from './pages/Dashboard'
-import { TopRated } from './pages/TopRated'
-import { Popular } from './pages/Popular'
-import { Search } from './pages/Search'
-import { Details } from './pages/Details'
-import { ErrorState } from './components/ErrorState'
-import { isApiKeyConfigured, getMissingKeyError } from './lib/api'
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Header } from "./components/Header";
+import { Dashboard } from "./pages/Dashboard";
+import { TopRated } from "./pages/TopRated";
+import { Popular } from "./pages/Popular";
+import { Search } from "./pages/Search";
+import { Details } from "./pages/Details";
+import { ErrorState } from "./components/ErrorState";
+import { isApiKeyConfigured, getMissingKeyError } from "./lib/api";
 
 function AppContent() {
-  const apiKeyMissing = !isApiKeyConfigured()
+  const apiKeyMissing = !isApiKeyConfigured();
 
   if (apiKeyMissing) {
     return (
@@ -19,7 +19,7 @@ function AppContent() {
           <ErrorState error={getMissingKeyError()} />
         </div>
       </div>
-    )
+    );
   }
 
   return (
@@ -36,7 +36,7 @@ function AppContent() {
         </Routes>
       </main>
     </div>
-  )
+  );
 }
 
 function App() {
@@ -44,7 +44,7 @@ function App() {
     <BrowserRouter>
       <AppContent />
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
